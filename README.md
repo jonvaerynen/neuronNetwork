@@ -1,1 +1,3 @@
 # neuronNetwork
+
+neuronikerros harjoituksia
