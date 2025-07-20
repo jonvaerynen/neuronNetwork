@@ -49,6 +49,20 @@ Perceptron::Perceptron(size_t syotteidenMaara) {
 	std::cout << "Perceptron luotu satunnaisilla arvoilla.\n";
 }
 
+void Perceptron::train(const std::vector<float>& syote, float tavoite, float oppimisnopeus) {
+
+	float output = laske(syote);
+	float virhe = tavoite - output;
+
+	// päivitetään painot
+	for (size_t i = 0; i < painot.size(); ++i) {
+		painot[i] += oppimisnopeus * virhe * syote[i];
+	}
+	// päivitetään bias
+	bias += oppimisnopeus * virhe;
+
+}
+
 void Perceptron::tulostaParametrit() const {
 	std::cout << std::fixed << std::setprecision(2);
 	std::cout << "Bias: " << bias << "\n";

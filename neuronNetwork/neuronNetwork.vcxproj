@@ -125,7 +125,7 @@
   <ItemGroup>
     <ClCompile Include="kerros.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="neuroniKerros.cpp" />
+    <ClCompile Include="neuroniHarjoitus.cpp" />
     <ClCompile Include="perceptron.cpp" />
   </ItemGroup>
   <ItemGroup>
