@@ -21,6 +21,14 @@ std::vector<float> Kerros::laske(const std::vector<float>& syotteet) const {
 	return tulokset;
 }
 
+void Kerros::train(const std::vector<float>& syote, float tavoite, float oppimisnopeus) {
+	
+	for (auto& neuroni : neuronit) {
+		neuroni.train(syote, tavoite, oppimisnopeus);
+	}
+}
+
+
 void Kerros::tulostaParametrit() const {
 	std::cout << "=== Kerroksen parametrit ===\n";
 	
