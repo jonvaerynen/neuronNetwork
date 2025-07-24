@@ -1,11 +1,30 @@
 #include <iostream>
 #include "perceptron.h"
 #include "kerros.h"
+#include "neuroverkko.h"
 #include <iomanip>
 #include <vector>
 
-void neuron();
+int main() {
+	Neuroverkko verkko(2,3,1);
 
+	std::vector<float> syote { 1.0f, 0.5f };
+
+	auto tulos = verkko.laske(syote);
+
+	std::cout << "Tulos verkosta:\n";
+	for (float arvo : tulos) {
+		std::cout << arvo << "\n";
+	}
+
+	verkko.tulostaParametrit();
+
+	return 0;
+}
+
+
+
+/*
 int main() {
 	int syotteidenMaara = 2;
 	int neuronienMaara = 10;
@@ -54,3 +73,4 @@ int main() {
 	return 0;
 }
 
+*/

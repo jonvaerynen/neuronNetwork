@@ -27,12 +27,18 @@
     <ClCompile Include="kerros.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="neuroverkko.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="perceptron.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="kerros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="neuroverkko.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

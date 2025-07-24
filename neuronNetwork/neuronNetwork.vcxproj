@@ -127,10 +127,12 @@
     <ClCompile Include="kerros.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="neuroniHarjoitus.cpp" />
+    <ClCompile Include="neuroverkko.cpp" />
     <ClCompile Include="perceptron.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kerros.h" />
+    <ClInclude Include="neuroverkko.h" />
     <ClInclude Include="perceptron.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

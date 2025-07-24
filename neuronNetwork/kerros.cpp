@@ -1,6 +1,10 @@
 #include "kerros.h"
 #include <iostream>
 
+std::vector<Perceptron>& Kerros::getNeuronit()  {
+	return neuronit;
+}
+
 Kerros::Kerros(size_t syotteidenMaara, size_t neuronienMaara) {
 	
 	neuronit.reserve(neuronienMaara);
