@@ -6,18 +6,36 @@
 #include <vector>
 
 int main() {
-	Neuroverkko verkko(2,3,1);
+	Neuroverkko verkko(2,25,1);
 
-	std::vector<float> syote { 1.0f, 0.5f };
+	std::vector<std::pair<std::vector<float>, float>> data = {
+	{{ 0.0f, 0.0f}, 0.0f},
+	{{ 1.0f, 0.0f}, 1.0f},
+	{{ 0.0f, 1.0f}, 1.0f},
+	{{ 1.0f, 1.0f}, 0.0f}
+	};
 
-	auto tulos = verkko.laske(syote);
-
-	std::cout << "Tulos verkosta:\n";
-	for (float arvo : tulos) {
-		std::cout << arvo << "\n";
+	std::cout << std::fixed << std::setprecision(3);
+	std::cout << "\n=== Ennen ===\n";
+	for (const auto& [syote, tavoite] : data) {
+		auto out = verkko.laske(syote);
+		std::cout << syote[0] << " " << syote[1] << " " << out[0] << "(tavoite: " << tavoite << ")\n";
 	}
 
-	verkko.tulostaParametrit();
+	float oppimisnopeus = 0.1f;
+	for (int epookki = 0; epookki < 100000; ++epookki) {
+		for (const auto& [syote, tavoite] : data) {
+			verkko.train(syote, tavoite, oppimisnopeus);
+		}
+	}
+
+	std::cout << std::fixed << std::setprecision(3);
+	std::cout << "\n=== Jalkeen ===\n";
+	for (const auto& [syote, tavoite] : data) {
+		auto out = verkko.laske(syote);
+		std::cout << syote[0] << " " << syote[1] << " " << out[0] << "(tavoite: " << tavoite << ")\n";
+	}
+
 
 	return 0;
 }

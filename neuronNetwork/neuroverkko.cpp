@@ -16,7 +16,7 @@ std::vector<float> Neuroverkko::laske(const std::vector<float>& syote) {
 	return ulostulo;
 }
 
-void Neuroverkko::train(std::vector<float>& syote, float tavoite, float oppimisnopeus) {
+void Neuroverkko::train(const std::vector<float>& syote, float tavoite, float oppimisnopeus) {
 	auto piilotulos = piilokerros.laske(syote);
 
 	auto ulostulo = ulostulokerros.laske(piilotulos);
